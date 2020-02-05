@@ -4,14 +4,15 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { DrawRoadmapComponent } from "./pages/draw-roadmap/draw-roadmap.component";
-import { MatToolbarModule } from "@angular/material/toolbar";
+import { ShareModule } from './share/share.module';
+import { DrawRoadmapComponent } from './pages/draw-roadmap/draw-roadmap.component';
+import { AboutComponent } from './pages/about/about.component';
 @NgModule({
-  declarations: [AppComponent, DrawRoadmapComponent],
+  declarations: [AppComponent,DrawRoadmapComponent,AboutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatToolbarModule,
+    ShareModule.forRoot(),
     BrowserAnimationsModule
   ],
   providers: [],
