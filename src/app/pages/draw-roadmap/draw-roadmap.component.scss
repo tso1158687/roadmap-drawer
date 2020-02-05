@@ -1,0 +1,15 @@
+#draw-area{
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: nowrap;
+    >div{
+        flex: 1;
+        background-color: #f08bc3;
+        margin: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: white;
+        font-size: 2rem;
+    }
+}

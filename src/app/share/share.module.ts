@@ -7,7 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
-
+import {MatInputModule} from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent, FooterComponent } from './components';
@@ -19,7 +19,8 @@ const angularMaterialModule = [
   MatToolbarModule,
   MatCheckboxModule,
   MatFormFieldModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatInputModule
 ];
 
 const components = [HeaderComponent,FooterComponent];
