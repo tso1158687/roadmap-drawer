@@ -20,6 +20,9 @@ export class AppComponent implements OnInit {
       this.lat = e.lat;
       this.lng = e.lng;
     });
+    this.appService.getMaskInformation().subscribe(e=>{
+      console.log(e)
+    })
   }
   changeLocation(data) {
     console.log(data);

@@ -1,5 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -7,11 +8,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent, FooterComponent } from './components';
-const baseModules = [CommonModule, RouterModule, ReactiveFormsModule];
+const baseModules = [CommonModule, RouterModule, ReactiveFormsModule, HttpClientModule];
 const angularMaterialModule = [
   MatTooltipModule,
   MatMenuModule,
@@ -23,7 +24,7 @@ const angularMaterialModule = [
   MatInputModule
 ];
 
-const components = [HeaderComponent,FooterComponent];
+const components = [HeaderComponent, FooterComponent];
 
 const directives = [
   // ClickOutSideDirective
