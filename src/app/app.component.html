@@ -1,4 +1,10 @@
 <app-header></app-header>
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoomValue"></agm-map>
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoomValue" (boundsChange)="changeLocation($event)">
+    <agm-marker [latitude]="lat" [longitude]="lng" (markerClick)="markerClick(infowindow)"></agm-marker>
+    <agm-info-window #infowindow [latitude]="lat+0.0005" [longitude]="lng" [isOpen]="isOpen">
+        <h5>國立臺中科技大學</h5>
+        <p>National Taichung University of Science and Technology.</p>
+    </agm-info-window>
+</agm-map>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
