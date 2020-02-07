@@ -11,17 +11,14 @@ export class AppComponent implements OnInit {
   lat: number = 25.0470782;
   lng: number = 121.5139071;
   locationData;
-  currentLocation = {
-    center: {
-      lat: this.lat,
-      lng: this.lng
-    }
-  };
+  breakpoint: number;
+  iconUrl = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+  // green,yellow,red
   zoomValue: number = 15;
   isOpen = false;
   constructor(private appService: AppService) {}
   ngOnInit() {
-    // this.appService.getPosition().then(e=>{console.log(e)})
+    this.breakpoint = window.innerWidth <= 768 ? 1 : 3;
     this.appService.getPosition().then(e => {
       console.log(e);
       this.lat = e.lat;
@@ -58,5 +55,14 @@ export class AppComponent implements OnInit {
     console.log("maker click");
     e.open();
     this.isOpen = true;
+  }
+  onResize(event) {
+    console.log("resize");
+    this.breakpoint = event.target.innerWidth <= 768 ? 1 : 3;
+  }
+  getAddress(address) {
+    let url = `https://www.google.com.tw/maps/place/${address}`;
+    console.log(url)
+    return url;
   }
 }

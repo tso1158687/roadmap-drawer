@@ -12,6 +12,9 @@ import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent, FooterComponent } from './components';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule} from '@angular/material/icon';
 const baseModules = [CommonModule, RouterModule, ReactiveFormsModule, HttpClientModule];
 const angularMaterialModule = [
   MatTooltipModule,
@@ -21,7 +24,10 @@ const angularMaterialModule = [
   MatCheckboxModule,
   MatFormFieldModule,
   MatExpansionModule,
-  MatInputModule
+  MatInputModule,
+  MatCardModule,
+  MatGridListModule,
+  MatIconModule
 ];
 
 const components = [HeaderComponent, FooterComponent];
