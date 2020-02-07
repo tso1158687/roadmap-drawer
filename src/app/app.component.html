@@ -1,10 +1,16 @@
 <app-header></app-header>
 <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoomValue" (boundsChange)="changeLocation($event)">
-    <agm-marker [latitude]="lat" [longitude]="lng" (markerClick)="markerClick(infowindow)"></agm-marker>
-    <agm-info-window #infowindow [latitude]="lat+0.0005" [longitude]="lng" [isOpen]="isOpen">
-        <h5>國立臺中科技大學</h5>
-        <p>National Taichung University of Science and Technology.</p>
-    </agm-info-window>
+    <ng-container  *ngFor="let m of locationData; let i = index">
+        <agm-marker [latitude]="m.latitude" [longitude]="m.longitude" (markerClick)="markerClick(infowindow)"></agm-marker>
+        <agm-info-window #infowindow [latitude]="m.latitude+0.0005" [longitude]="m.longitude">
+            <h2>{{m.name}}</h2>
+            <p>National Taichung University of Science and Technology.</p>
+
+            <div>
+                最後更新時間:{{m.updated | date:'yyyy-MM-dd'}}
+                </div>
+        </agm-info-window>
+    </ng-container>
 </agm-map>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
